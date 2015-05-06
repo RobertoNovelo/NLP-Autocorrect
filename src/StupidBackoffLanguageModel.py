@@ -38,18 +38,6 @@ class StupidBackoffLanguageModel:
     unigramWordsCountLength = len(self.unigramWordsCount)
     sentencesLength = len(sentence)
     for i in range(sentencesLength):
-        # if i >= 1:
-        #     bigramKey = sentence[i - 1] + "," + sentence[i]
-        #     unigramKey = sentence[i -1]
-        #     bigramCount = self.bigramWordsCount[bigramKey]
-        #     unigramCount = self.unigramWordsCount[unigramKey]
-
-        #     if bigramCount > 0:
-        #         score += math.log(bigramCount) - math.log(unigramCount)
-        #     else:
-        #         unigramCount = self.unigramWordsCount[sentence[i]]
-        #         score += math.log(unigramCount + 1) + math.log(0.4)
-        #         score -= math.log(self.total + unigramWordsCountLength)
         if i>=2:
 
             trigramKey = sentence[i - 2] + "," + sentence[i - 1] + "," + sentence[i]     
